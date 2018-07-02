@@ -1,0 +1,324 @@
+<templateSet group="Laravel Backpack">
+  <template name="bpfaddress" value="[   // Address&#10;    'name' =&gt; '$START$',&#10;    'label' =&gt; '$VAR1$',&#10;    'type' =&gt; 'address',&#10;    // optional&#10;    'store_as_json' =&gt; $VAR2$&#10;],$END$&#10;" description="Address Field" toReformat="true" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR2" expression="" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfbrowse" value="[   // Browse&#10;    'name' =&gt; '$START$',&#10;    'label' =&gt; '$VAR1$',&#10;    'type' =&gt; 'browse'&#10;],$END$" description="Browse Field" toReformat="false" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfbase64_image" value="$this-&gt;crud-&gt;addField([ // base64_image&#10;    'label' =&gt; &quot;$START$&quot;,&#10;    'name' =&gt; &quot;$VAR1$&quot;,&#10;    'filename' =&gt; &quot;$VAR2$&quot;, // set to null if not needed&#10;    'type' =&gt; 'base64_image',&#10;    'aspect_ratio' =&gt; 1, // set to 0 to allow any aspect ratio&#10;    'crop' =&gt; true, // set to true to allow cropping, false to disable&#10;    'src' =&gt; NULL, // null to read straight from DB, otherwise set to model accessor function&#10;]);$END$" description="Base64 Image" toReformat="false" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfcheckbox" value="[   // Checkbox&#10;    'name' =&gt; '$START$',&#10;    'label' =&gt; '$VAR1$',&#10;    'type' =&gt; 'checkbox'&#10;],$END$" description="Checkboc Field" toReformat="false" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfchecklist" value="    'label'     =&gt; '$START$',&#10;    'type'      =&gt; 'checklist',&#10;    'name'      =&gt; '$VAR1$',&#10;    'entity'    =&gt; 'roles',&#10;    'attribute' =&gt; 'name',&#10;    'model'     =&gt; &quot;Backpack\PermissionManager\app\Models\Role&quot;,&#10;    'pivot'     =&gt; true,&#10;]);$END$" description="Checklist Field" toReformat="true" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfchecklist_dep" value="// two interconnected entities&#10;'label'             =&gt; '$START$',&#10;'field_unique_name' =&gt; 'user_role_permission',&#10;'type'              =&gt; 'checklist_dependency',&#10;'name'              =&gt; 'roles_and_permissions', // the methods that defines the relationship in your Model&#10;'subfields'         =&gt; [&#10;        'primary' =&gt; [&#10;            'label'            =&gt; 'Roles',&#10;            'name'             =&gt; 'roles', // the method that defines the relationship in your Model&#10;            'entity'           =&gt; 'roles', // the method that defines the relationship in your Model&#10;            'entity_secondary' =&gt; 'permissions', // the method that defines the relationship in your Model&#10;            'attribute'        =&gt; 'name', // foreign key attribute that is shown to user&#10;            'model'            =&gt; &quot;Backpack\PermissionManager\app\Models\Role&quot;, // foreign key model&#10;            'pivot'            =&gt; true, // on create&amp;update, do you need to add/delete pivot table entries?]&#10;            'number_columns'   =&gt; 3, //can be 1,2,3,4,6&#10;        ],&#10;        'secondary' =&gt; [&#10;            'label'          =&gt; 'Permission',&#10;            'name'           =&gt; 'permissions', // the method that defines the relationship in your Model&#10;            'entity'         =&gt; 'permissions', // the method that defines the relationship in your Model&#10;            'entity_primary' =&gt; 'roles', // the method that defines the relationship in your Model&#10;            'attribute'      =&gt; 'name', // foreign key attribute that is shown to user&#10;            'model'          =&gt; &quot;Backpack\PermissionManager\app\Models\Permission&quot;, // foreign key model&#10;            'pivot'          =&gt; true, // on create&amp;update, do you need to add/delete pivot table entries?]&#10;            'number_columns' =&gt; 3, //can be 1,2,3,4,6&#10;        ],&#10;    ],&#10;],$END$" description="Checklist Dependency Field" toReformat="true" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfckeditor" value="[   // CKEditor&#10;    'name' =&gt; '$START$',&#10;    'label' =&gt; '$VAR1$',&#10;    'type' =&gt; 'ckeditor',&#10;    // optional:&#10;    'extra_plugins' =&gt; ['oembed', 'widget', 'justify']&#10;],$END$" description="Show a wysiwyg CKEditor to the user" toReformat="false" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="&quot;description&quot;" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="&quot;Description&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfcolor" value="[   // Color&#10;    'name' =&gt; '$START$',&#10;    'label' =&gt; '$VAR1$',&#10;    'type' =&gt; 'color'&#10;],$END$" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="START" expression="" defaultValue="&quot;background_color&quot;" alwaysStopAt="true" />
+    <variable name="VAR1" expression="" defaultValue="&quot;Background Color&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfcolorpicker" value="[   // color_picker&#10;    'label' =&gt; 'Background Color',&#10;    'name' =&gt; 'background_color',&#10;    'type' =&gt; 'color_picker',&#10;    'color_picker_options' =&gt; ['customClass' =&gt; 'custom-class']&#10;],$END$" description="Show a pretty colour picker using Bootstrap Colorpicker." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfcustom_html" value="[   // CustomHTML&#10;    'name' =&gt; 'separator',&#10;    'type' =&gt; 'custom_html',&#10;    'value' =&gt; '&lt;hr&gt;'&#10;],$END$" description="Allows you to insert custom HTML in the create/update forms. Usually used in forms with a lot of fields, to separate them using h1-h5, hr, etc, but can be used for any HTML." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfdate" value="[   // Date&#10;    'name' =&gt; 'birthday',&#10;    'label' =&gt; 'Birthday',&#10;    'type' =&gt; 'date'&#10;],$END$" description="Date Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfdate_picker" value="[   // date_picker&#10;   'name' =&gt; 'date',&#10;   'type' =&gt; 'date_picker',&#10;   'label' =&gt; 'Date',&#10;   // optional:&#10;   'date_picker_options' =&gt; [&#10;      'todayBtn' =&gt; true,&#10;      'format' =&gt; 'dd-mm-yyyy',&#10;      'language' =&gt; 'fr'&#10;   ],&#10;],$END$" description="Date Picker Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfdaterange" value=" [ //DATE_RANGE&#10;            'name' =&gt; 'event_date_range', // a unique name for this field&#10;            'start_name' =&gt; 'start_date', // the db column that holds the start_date&#10;            'end_name' =&gt; 'end_date', // the db column that holds the end_date&#10;            'label' =&gt; 'Event Date Range',&#10;            'type' =&gt; 'date_range',&#10;            // OPTIONALS&#10;            'start_default' =&gt; '1991-03-28 01:01', // default value for start_date&#10;            'end_default' =&gt; '1991-04-05 02:00', // default value for end_date&#10;            'date_range_options' =&gt; [ // options sent to daterangepicker.js&#10;                'timePicker' =&gt; true,&#10;                'locale' =&gt; ['format' =&gt; 'DD/MM/YYYY HH:mm']&#10;            ]&#10;        ],$END$" description="Date Picker Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfdatetime" value="[   // DateTime&#10;    'name' =&gt; 'start',&#10;    'label' =&gt; 'Event start',&#10;    'type' =&gt; 'datetime'&#10;],$END$" description="DateTime" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfdatetime_picker" value="[   // DateTime&#10;    'name' =&gt; 'start',&#10;    'label' =&gt; 'Event start',&#10;    'type' =&gt; 'datetime_picker',&#10;    // optional:&#10;    'datetime_picker_options' =&gt; [&#10;        'format' =&gt; 'DD/MM/YYYY HH:mm',&#10;        'language' =&gt; 'fr'&#10;    ]&#10;],$END$" description="DateTime Picker Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfemail" value="[   // Email&#10;    'name' =&gt; 'email',&#10;    'label' =&gt; 'Email Address',&#10;    'type' =&gt; 'email'&#10;],$END$" description="Email Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfenum" value="[   // Enum&#10;    'name' =&gt; 'status',&#10;    'label' =&gt; 'Status',&#10;    'type' =&gt; 'enum'&#10;],$END$" description="Enum Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfhidden" value="[   // Hidden&#10;    'name' =&gt; 'status',&#10;    'type' =&gt; 'hidden'&#10;],$END$" description="Hidden Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpficon_picker" value="[&#10;    'label' =&gt; &quot;Icon&quot;,&#10;    'name' =&gt; 'icon',&#10;    'type' =&gt; 'icon_picker',&#10;    'iconset' =&gt; 'fontawesome' // options: fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign&#10;],$END$" description="Icon Picker Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfimage" value="[ // image&#10;    'label' =&gt; &quot;Profile Image&quot;,&#10;    'name' =&gt; &quot;image&quot;,&#10;    'type' =&gt; 'image',&#10;    'upload' =&gt; true,&#10;    'crop' =&gt; true, // set to true to allow cropping, false to disable&#10;    'aspect_ratio' =&gt; 1, // ommit or set to 0 to allow any aspect ratio&#10;    // 'prefix' =&gt; 'uploads/images/profile_pictures/' // in case you only store the filename in the database, this text will be prepended to the database value&#10;],$END$" description="Upload an image and store it on the disk Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfmonth" value="[   // Month&#10;    'name' =&gt; 'month',&#10;    'label' =&gt; 'Month',&#10;    'type' =&gt; 'month'&#10;],$END$" description="Month Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfnumber" value="[   // Number&#10;    'name' =&gt; 'number',&#10;    'label' =&gt; 'Number',&#10;    'type' =&gt; 'number',&#10;    // optionals&#10;    // 'attributes' =&gt; [&quot;step&quot; =&gt; &quot;any&quot;], // allow decimals&#10;    // 'prefix' =&gt; &quot;$&quot;,&#10;    // 'suffix' =&gt; &quot;.00&quot;,&#10;],$END$" description="Number field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfpageorlink" value="[   // PageOrLink&#10;    'name' =&gt; 'type',&#10;    'label' =&gt; &quot;Type&quot;,&#10;    'type' =&gt; 'page_or_link',&#10;    'page_model' =&gt; '\Backpack\PageManager\app\Models\Page'&#10;],$END$" description="Page or Link field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfpassword" value="[   // Password&#10;    'name' =&gt; 'password',&#10;    'label' =&gt; 'Password',&#10;    'type' =&gt; 'password'&#10;],$END$" description="Password field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfradio" value="[&#10;    'name'        =&gt; 'status', // the name of the db column&#10;    'label'       =&gt; 'Status', // the input label&#10;    'type'        =&gt; 'radio',&#10;    'options'     =&gt; [ // the key will be stored in the db, the value will be shown as label; &#10;                        0 =&gt; &quot;Draft&quot;,&#10;                        1 =&gt; &quot;Published&quot;&#10;                    ],&#10;    // optional&#10;    //'inline'      =&gt; false, // show the radios all on the same line?&#10;],$END$" description="Radio field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfrange" value="[   // Range&#10;    'name' =&gt; 'range',&#10;    'label' =&gt; 'Range',&#10;    'type' =&gt; 'range'&#10;],$END$" description="Range field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselect" value="[  // Select&#10;   'label' =&gt; &quot;Category&quot;,&#10;   'type' =&gt; 'select',&#10;   'name' =&gt; 'category_id', // the db column for the foreign key&#10;   'entity' =&gt; 'category', // the method that defines the relationship in your Model&#10;   'attribute' =&gt; 'name', // foreign key attribute that is shown to user&#10;   'model' =&gt; &quot;App\Models\Tag&quot; // foreign key model&#10;],$END$" description="select (1-n relationship)" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselect2" value="[  // Select2&#10;   'label' =&gt; &quot;Category&quot;,&#10;   'type' =&gt; 'select2',&#10;   'name' =&gt; 'category_id', // the db column for the foreign key&#10;   'entity' =&gt; 'category', // the method that defines the relationship in your Model&#10;   'attribute' =&gt; 'name', // foreign key attribute that is shown to user&#10;   'model' =&gt; &quot;App\Models\Tag&quot; // foreign key model&#10;],$END$" description="select2 (1-n relationship)" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselectmultiple" value="[       // SelectMultiple = n-n relationship (with pivot table)&#10;    'label' =&gt; &quot;Tags&quot;,&#10;    'type' =&gt; 'select_multiple',&#10;    'name' =&gt; 'tags', // the method that defines the relationship in your Model&#10;    'entity' =&gt; 'tags', // the method that defines the relationship in your Model&#10;    'attribute' =&gt; 'name', // foreign key attribute that is shown to user&#10;    'model' =&gt; &quot;App\Models\Tag&quot;, // foreign key model&#10;    'pivot' =&gt; true, // on create&amp;update, do you need to add/delete pivot table entries?&#10;],$END$" description="select_multiple (n-n relationship)" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselect2multiple" value="[       // Select2Multiple = n-n relationship (with pivot table)&#10;    'label' =&gt; &quot;Tags&quot;,&#10;    'type' =&gt; 'select2_multiple',&#10;    'name' =&gt; 'tags', // the method that defines the relationship in your Model&#10;    'entity' =&gt; 'tags', // the method that defines the relationship in your Model&#10;    'attribute' =&gt; 'name', // foreign key attribute that is shown to user&#10;    'model' =&gt; &quot;App\Models\Tag&quot;, // foreign key model&#10;    'pivot' =&gt; true, // on create&amp;update, do you need to add/delete pivot table entries?&#10;],$END$" description="select2_multiple (n-n relationship)" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselectfromarray" value="[ // select_from_array&#10;    'name' =&gt; 'template',&#10;    'label' =&gt; &quot;Template&quot;,&#10;    'type' =&gt; 'select_from_array',&#10;    'options' =&gt; [‘one’ =&gt; ‘One’, ‘two’ =&gt; ‘Two’],&#10;    'allows_null' =&gt; false,&#10;    // 'allows_multiple' =&gt; true, // OPTIONAL; needs you to cast this to array in your model;&#10;],$END$" description="Select From Array" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselect2fromarray" value="[ // select_from_array&#10;    'name' =&gt; 'template',&#10;    'label' =&gt; &quot;Template&quot;,&#10;    'type' =&gt; 'select2_from_array',&#10;    'options' =&gt; [‘one’ =&gt; ‘One’, ‘two’ =&gt; ‘Two’],&#10;    'allows_null' =&gt; false,&#10;    // 'allows_multiple' =&gt; true, // OPTIONAL; needs you to cast this to array in your model;&#10;],$END$" description="Select2 From Array" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfselect2fromajax" value="[&#10;            // 1-n relationship&#10;            'label' =&gt; &quot;End&quot;, // Table column heading&#10;            'type' =&gt; &quot;select2_from_ajax&quot;,&#10;            'name' =&gt; 'category_id', // the column that contains the ID of that connected entity&#10;            'entity' =&gt; 'city', // the method that defines the relationship in your Model&#10;            'attribute' =&gt; &quot;name&quot;, // foreign key attribute that is shown to user&#10;            'model' =&gt; &quot;App\Models\Category&quot;, // foreign key model&#10;            'data_source' =&gt; url(&quot;api/category&quot;), // url to controller search function (with /{id} should return model)&#10;            'placeholder' =&gt; &quot;Select a category&quot;, // placeholder for the select&#10;            'minimum_input_length' =&gt; 2, // minimum characters to type before querying results&#10; ],$END$" description="select2_from_ajax" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfsimplemde" value="[   // SimpleMDE&#10;    'name' =&gt; 'description',&#10;    'label' =&gt; 'Description',&#10;    'type' =&gt; 'simplemde',&#10;    // optional&#10;   // 'simplemdeAttributes' =&gt; [&#10;   //   'promptURLs' =&gt; true,&#10;   //   'status' =&gt; false,&#10;   //   'spellChecker' =&gt; false,&#10;   //   'forceSync' =&gt; true,&#10;   // ],&#10;   // 'simplemdeAttributesRaw' =&gt; $some_json&#10;],$END$" description="Show a SimpleMDE markdown editor to the user" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfsummernote" value="[   // Summernote&#10;    'name' =&gt; 'description',&#10;    'label' =&gt; 'Description',&#10;    'type' =&gt; 'summernote'&#10;],$END$" description="Show a Summernote wysiwyg editor" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpftable" value="[ // Table&#10;    'name' =&gt; 'options',&#10;    'label' =&gt; 'Options',&#10;    'type' =&gt; 'table',&#10;    'entity_singular' =&gt; 'option', // used on the &quot;Add X&quot; button&#10;    'columns' =&gt; [&#10;        'name' =&gt; 'Name',&#10;        'desc' =&gt; 'Description',&#10;        'price' =&gt; 'Price'&#10;    ],&#10;    'max' =&gt; 5, // maximum rows allowed in the table&#10;    'min' =&gt; 0 // minimum rows allowed in the table&#10;],$END$" description="table Filed" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpftext" value="[ // Text&#10;    'name' =&gt; 'title',&#10;    'label' =&gt; &quot;Title&quot;,&#10;    'type' =&gt; 'text',&#10;&#10;    // optional&#10;    //'prefix' =&gt; '',&#10;    //'suffix' =&gt; '',&#10;    //'default'    =&gt; 'some value', // default value&#10;    //'hint'       =&gt; 'Some hint text', // helpful text, show up after input&#10;    //'attributes' =&gt; [&#10;       //'placeholder' =&gt; 'Some text when empty',&#10;       //'class' =&gt; 'form-control some-class'&#10;     //], // extra HTML attributes and values your input might need&#10;     //'wrapperAttributes' =&gt; [&#10;       //'class' =&gt; 'form-group col-md-12'&#10;     //], // extra HTML attributes for the field wrapper - mostly for resizing fields &#10;     //'readonly'=&gt;'readonly',&#10;],$END$&#10;" description="Text Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpftextarea" value="[   // Textarea&#10;    'name' =&gt; 'description',&#10;    'label' =&gt; 'Description',&#10;    'type' =&gt; 'textarea'&#10;],$END$&#10;" description="Textarea Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpftime" value="[   // Time&#10;    'name' =&gt; 'start',&#10;    'label' =&gt; 'Start time',&#10;    'type' =&gt; 'time'&#10;],$END$&#10;" description="Time Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpftinymce" value="[   // TinyMCE&#10;    'name' =&gt; 'description',&#10;    'label' =&gt; 'Description',&#10;    'type' =&gt; 'tinymce'&#10;],$END$&#10;" description="tinymce Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfupload" value="[   // Upload&#10;    'name' =&gt; 'image',&#10;    'label' =&gt; 'Image',&#10;    'type' =&gt; 'upload',&#10;    'upload' =&gt; true,&#10;    'disk' =&gt; 'uploads' // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;&#10;],$END$&#10;" description="Upload Field***" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfuploadmultiple" value="[   // Upload&#10;    'name' =&gt; 'photos',&#10;    'label' =&gt; 'Photos',&#10;    'type' =&gt; 'upload_multiple',&#10;    'upload' =&gt; true,&#10;    'disk' =&gt; 'uploads' // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;&#10;],$END$&#10;" description="Upload Multiple Field***" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfurl" value="[   // URL&#10;    'name' =&gt; 'link',&#10;    'label' =&gt; 'Link to video file',&#10;    'type' =&gt; 'url'&#10;],$END$&#10;" description="URL Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfvideo" value="[   // URL&#10;    'name' =&gt; 'video',&#10;    'label' =&gt; 'Link to video file on Youtube or Vimeo',&#10;    'type' =&gt; 'video',&#10;],$END$&#10;" description="Allow the user to paste a Youtube/Vimeo link. That will get the video information with Javascript and store it as a JSON in the database." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfview" value="[&#10;        'name' =&gt; 'custom-ajax-button',&#10;        'type' =&gt; 'view',&#10;        'view' =&gt; 'partials/custom-ajax-button'&#10;],$END$&#10;" description="Load a custom view in the form." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfweek" value="[   // Week&#10;    'name' =&gt; 'first_week',&#10;    'label' =&gt; 'First week',&#10;    'type' =&gt; 'week'&#10;],$END$&#10;" description="Week Field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpfwysiwyg" value="[   // WYSIWYG Editor&#10;    'name' =&gt; 'description',&#10;    'label' =&gt; 'Description',&#10;    'type' =&gt; 'wysiwyg'&#10;],$END$&#10;" description="Show a wysiwyg (CKEditor) to the user." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcarray" value="[&#10;   'name' =&gt; 'options', // The db column name&#10;   'label' =&gt; &quot;Options&quot;, // Table column heading&#10;   'type' =&gt; 'array'&#10;],$END$" description="Enumerate an array stored in the db column as JSON." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcarray_count" value="[&#10;   'name' =&gt; 'options', // The db column name&#10;   'label' =&gt; &quot;Options&quot;, // Table column heading&#10;   'type' =&gt; 'array_count'&#10;],$END$" description="Count the items in an array stored in the db column as JSON." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcboolean" value="[&#10;    'name' =&gt; 'name',&#10;    'label' =&gt; 'Status',&#10;    'type' =&gt; 'boolean',&#10;    // optionally override the Yes/No texts&#10;    // 'options' =&gt; [0 =&gt; 'Active', 1 =&gt; 'Inactive']&#10;],$END$" description="Show Yes/No (or custom text) instead of 1/0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpccheck" value="[&#10;   'name' =&gt; 'featured', // The db column name&#10;   'label' =&gt; &quot;Featured&quot;, // Table column heading&#10;   'type' =&gt; 'check'&#10;],$END$" description="Show a favicon with a checked or unchecked box, depending on the given boolean." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcimage" value="[&#10;   'name' =&gt; 'profile_image', // The db column name&#10;   'label' =&gt; &quot;Profile image&quot;, // Table column heading&#10;   'type' =&gt; 'image',&#10;    // optional width/height if 25px is not ok with you&#10;    // 'height' =&gt; '30px',&#10;    // 'width' =&gt; '30px',&#10;],$END$" description="Show a thumbnail image." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcmultidimensional_array" value="[&#10;   'name' =&gt; 'options', // The db column name&#10;   'label' =&gt; &quot;Options&quot;, // Table column heading&#10;   'type' =&gt; 'multidimensional_array',&#10;   'visible_key' =&gt; 'name' // The key to the attribute you would like shown in the enumeration&#10;],$END$" description="Enumerate the values in a multidimensional array, stored in the db as JSON." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcradio" value="[&#10;    'name'        =&gt; 'status',&#10;    'label'       =&gt; 'Status',&#10;    'type'        =&gt; 'radio',&#10;    'options'     =&gt; [&#10;                        0 =&gt; &quot;Draft&quot;,&#10;                        1 =&gt; &quot;Published&quot;&#10;                    ]&#10;],$END$" description="Show a pretty text instead of the database value, according to an associative array. Usually used as a column for the &quot;radio&quot; field type." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpctext" value="[&#10;   'name' =&gt; 'name', // The db column name&#10;   'label' =&gt; &quot;Tag Name&quot; // Table column heading&#10;],$END$" description="The text column will just output the text value of a db column" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcselect" value="[&#10;   // 1-n relationship&#10;   'label' =&gt; &quot;Parent&quot;, // Table column heading&#10;   'type' =&gt; &quot;select&quot;,&#10;   'name' =&gt; 'parent_id', // the column that contains the ID of that connected entity;&#10;   'entity' =&gt; 'parent', // the method that defines the relationship in your Model&#10;   'attribute' =&gt; &quot;name&quot;, // foreign key attribute that is shown to user&#10;   'model' =&gt; &quot;App\Models\Category&quot;, // foreign key model&#10;],$END$" description="The select column will output its connected entity." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcselectfromarray" value="[ // select_from_array&#10;    'name' =&gt; 'status',&#10;    'label' =&gt; &quot;Status&quot;,&#10;    'type' =&gt; 'select_from_array',&#10;    'options' =&gt; [‘draft’ =&gt; ‘Draft (invisible)’, ‘published’ =&gt; ‘Published (visible)’],&#10;],$END$" description="The select column will output its connected entity." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcselectmultiple" value="[&#10;   // n-n relationship (with pivot table)&#10;   'label' =&gt; &quot;Tags&quot;, // Table column heading&#10;   'type' =&gt; &quot;select_multiple&quot;,&#10;   'name' =&gt; 'tags', // the method that defines the relationship in your Model&#10;   'entity' =&gt; 'tags', // the method that defines the relationship in your Model&#10;   'attribute' =&gt; &quot;name&quot;, // foreign key attribute that is shown to user&#10;   'model' =&gt; &quot;App\Models\Tag&quot;, // foreign key model&#10;],$END$" description="The select_multiple column will output a comma separated list of its connected entities" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcvideo" value="[&#10;   'name' =&gt; 'name', // The db column name&#10;   'label' =&gt; &quot;Tag Name&quot;, // Table column heading&#10;   'type' =&gt; 'video',&#10;],$END$" description="Display a small screenshot for a Youtube or Vimeo video, stored in the database as JSON using the &quot;video&quot; field type." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcmodel_function" value="[&#10;   // run a function on the CRUD model and show its return value&#10;   'name' =&gt; &quot;url&quot;,&#10;   'label' =&gt; &quot;URL&quot;, // Table column heading&#10;   'type' =&gt; &quot;model_function&quot;,&#10;   'function_name' =&gt; 'getSlugWithLink', // the method in your Model&#10;],$END$" description="The model_function column will output a function on your main model." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="bpcmodel_function_attribute" value="[&#10;   'name' =&gt; &quot;url&quot;,&#10;   'label' =&gt; &quot;URL&quot;, // Table column heading&#10;   'type' =&gt; &quot;model_function_attribute&quot;,&#10;   'function_name' =&gt; 'getSlugWithLink', // the method in your Model&#10;   'attribute' =&gt; 'route'&#10;],$END$" description="If the function you're trying to use returns an object, not a string, you can use the model_function_attribute column, which will output the attribute on the function result" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
