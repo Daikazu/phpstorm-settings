@@ -58,4 +58,14 @@
     </context>
   </template>
   <template name="site.phone" value="{{setting('site.phone')}}" description="" toReformat="false" toShortenFQNames="true" />
+  <template name="setp" value="{{setting('site.phone')}}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="sett" value="{{setting('site.title')}}" description="Settings Title" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
 </templateSet>
