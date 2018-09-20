@@ -1,5 +1,10 @@
 <templateSet group="Tailwinds">
-  <template name="flex-wrap-1/2" value="&lt;div class=&quot;flex flex-wrap -mx-4&quot;&gt;&#10;&lt;div class=&quot;-full md:w-1/2 px-4&quot;&gt;&#10;&#10;&lt;/div&gt;&#10;&lt;div class=&quot;-full md:w-1/2 px-4&quot;&gt;&#10;&#10;&lt;/div&gt;&#10;&lt;/div&gt;" toReformat="false" toShortenFQNames="true">
+  <template name="flex-wrap-1/2" value="&lt;div class=&quot;flex flex-wrap -mx-4&quot;&gt;&#10;&lt;div class=&quot;w-full md:w-1/2 px-4&quot;&gt;&#10;&#10;&lt;/div&gt;&#10;&lt;div class=&quot;-full md:w-1/2 px-4&quot;&gt;&#10;&#10;&lt;/div&gt;&#10;&lt;/div&gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="flex-wrap-1/4" value="&lt;div class=&quot;flex flex-wrap -mx-4&quot;&gt;&#10;&lt;div class=&quot;w-full md:w-1/4 px-4&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="HTML" value="true" />
     </context>
