@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="forms" type="PHP" />
       <mapping pattern=".gitignore-old" type="PLAIN_TEXT" />
       <mapping pattern="create_color_table" type="PLAIN_TEXT" />
       <mapping pattern="wriatbands-hero-list" type="Twig" />
