@@ -1,8 +1,8 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="All Places" />
-    <option name="defaultScopeName" value="All Places" />
-    <option name="SEARCH_SCOPE" value="All Places" />
+    <option name="customScope" value="File '.../app/Http/Controllers/Api/CustomerFileUploadController.php [tradingpinsdirect]'" />
+    <option name="defaultScopeName" value="File '.../app/Http/Controllers/Api/CustomerFileUploadController.php [tradingpinsdirect]'" />
+    <option name="SEARCH_SCOPE" value="File '.../app/Http/Controllers/Api/CustomerFileUploadController.php [tradingpinsdirect]'" />
     <mask>*.properties</mask>
     <mask>*.html</mask>
     <mask>*.jsp</mask>
