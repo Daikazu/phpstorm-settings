@@ -1,0 +1,19 @@
+<application>
+  <component name="ActionMacroManager">
+    <macro name="test">
+      <action id="ReplaceInPath" />
+      <typing text-keycode="45:0;76:0;73:0;71:0;72:0;84:0;69:0;83:0;84:0">-lightest</typing>
+      <shortuct text="LEFT" />
+      <typing text-keycode="71:0;82:0;69:0;89:0">grey</typing>
+      <shortuct text="LEFT" />
+      <shortuct text="LEFT" />
+      <shortuct text="LEFT" />
+      <typing text-keycode="45:0;45:0;97:0;96:0;96:0">--100</typing>
+      <action id="PlaySavedMacrosAction" />
+      <shortuct text="ESCAPE" />
+      <shortuct text="ESCAPE" />
+      <shortuct text="ESCAPE" />
+      <shortuct text="ESCAPE" />
+    </macro>
+  </component>
+</application>
