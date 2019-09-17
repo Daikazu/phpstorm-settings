@@ -1,5 +1,16 @@
 <application>
   <component name="libraryTable">
+    <library name="baguetteBox" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_baguettebox.js_1.11.0_baguetteBox.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_baguettebox.js_1.11.0_baguetteBox.js" />
+      </CLASSES>
+      <SOURCES />
+    </library>
     <library name="lazyload" type="javaScript">
       <properties>
         <sourceFilesUrls>
