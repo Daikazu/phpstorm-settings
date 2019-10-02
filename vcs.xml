@@ -306,6 +306,10 @@
           <option name="url" value="https://github.com/tjmpromos/wristbands-4-less.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/tjmpromos/tradingpinpros.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Code" />
