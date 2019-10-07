@@ -78,7 +78,7 @@
       <option name="HTML" value="true" />
     </context>
   </template>
-  <template name="mail" value="{{config('website.email')}}" toReformat="false" toShortenFQNames="true">
+  <template name="mail" value="{{config('website.email')}}" description="" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="HTML" value="true" />
     </context>
