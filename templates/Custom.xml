@@ -68,4 +68,19 @@
       <option name="HTML" value="true" />
     </context>
   </template>
+  <template name="ph" value="{{phone(config('website.phone'), 'US')-&gt;formatNational()}}" description="Phone" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="tel" value="{{phone(config('website.phone'), 'US')-&gt;formatRFC3966()}}" description="Telephone Link" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="mail" value="{{config('website.email')}}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
 </templateSet>
